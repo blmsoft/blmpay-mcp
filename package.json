@@ -1,7 +1,7 @@
 {
   "name": "@blmsoft/blmpay-mcp",
-  "version": "0.1.0",
-  "description": "Official MCP server for the BLMPay REST API",
+  "version": "0.2.0",
+  "description": "Official MCP server for the BLMPay REST API with domain-bound API key support",
   "type": "module",
   "scripts": {"start": "node src/http.js"},
   "engines": {"node": ">=20"},
