@@ -7,8 +7,12 @@ const writesAllowed = () => ['1','true','yes'].includes(String(process.env.BLMPA
 const requireWrites = () => { if(!writesAllowed()) throw new Error('Financial/write MCP tools are disabled. Set BLMPAY_MCP_ALLOW_WRITES=1 only for an explicitly trusted environment.'); };
 
 export function buildServer() {
-  const api=new BlmPayClient(process.env.BLMPAY_API_KEY,process.env.BLMPAY_API_BASE_URL||'https://pay.blmtec.co.tz/api/v1');
-  const server=new McpServer({name:'blmpay',version:'0.1.0'});
+  const api=new BlmPayClient(
+    process.env.BLMPAY_API_KEY,
+    process.env.BLMPAY_API_BASE_URL||'https://pay.blmtec.co.tz/api/v1',
+    process.env.BLMPAY_INTEGRATION_ORIGIN||null
+  );
+  const server=new McpServer({name:'blmpay',version:'0.2.0'});
   server.registerTool('blmpay_get_balance',{description:'Read the authenticated BLMPay merchant TZS balance.'},async()=>asText(await api.request('GET','/balance')));
   server.registerTool('blmpay_list_payments',{description:'List BLMPay collection transactions.',inputSchema:z.object({limit:z.number().int().min(1).max(100).optional(),offset:z.number().int().min(0).optional(),status:z.string().optional()})},async q=>asText(await api.request('GET','/payments',{query:q})));
   server.registerTool('blmpay_get_payment',{description:'Get a BLMPay payment by reference.',inputSchema:z.object({reference:z.string().min(1)})},async({reference})=>asText(await api.request('GET',`/payments/${encodeURIComponent(reference)}`)));
