@@ -41,9 +41,9 @@ MCP itself does not require an AI model API. It only translates MCP tool calls t
 
 Read tools work with `BLMPAY_MCP_ALLOW_WRITES=0`. Payment creation, payouts, webhook changes and USDT write operations require `BLMPAY_MCP_ALLOW_WRITES=1`. Enable writes only in an explicitly trusted environment and keep idempotency keys enabled for payment/payout creation.
 
-OpenAPI: https://github.com/Winnie7676/blmpay-openapi
-PHP SDK: https://github.com/Winnie7676/blmpay-sdk-php
-Node SDK: https://github.com/Winnie7676/blmpay-sdk-node
-Flutter SDK: https://github.com/Winnie7676/blmpay-sdk-flutter
+OpenAPI: https://github.com/blmsoft/blmpay-openapi
+PHP SDK: https://github.com/blmsoft/blmpay-sdk-php
+Node SDK: https://github.com/blmsoft/blmpay-sdk-node
+Flutter SDK: https://github.com/blmsoft/blmpay-sdk-flutter
 
 Powered by BLMSoft.
