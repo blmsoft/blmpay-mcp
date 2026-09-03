@@ -7,7 +7,7 @@
   "engines": {"node": ">=20"},
   "dependencies": {"@modelcontextprotocol/server": "^2.0.0", "@modelcontextprotocol/node": "^2.0.0", "zod": "^4.0.0"},
   "license": "MIT",
-  "repository": {"type": "git", "url": "https://github.com/Winnie7676/blmpay-mcp.git"},
-  "homepage": "https://github.com/Winnie7676/blmpay-mcp#readme",
-  "bugs": {"url": "https://github.com/Winnie7676/blmpay-mcp/issues"}
+  "repository": {"type": "git", "url": "https://github.com/blmsoft/blmpay-mcp.git"},
+  "homepage": "https://github.com/blmsoft/blmpay-mcp#readme",
+  "bugs": {"url": "https://github.com/blmsoft/blmpay-mcp/issues"}
 }
